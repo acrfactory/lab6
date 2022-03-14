@@ -42,6 +42,7 @@ public class TestUtilities {
         String[] result = Utilities.getAllPrefixes(input);
         String[] expected = {"[3]", "[3, 1]"};
         assertArrayEquals(expected, result);
+//        System.out.println(result.length);
     }
 
     @Test

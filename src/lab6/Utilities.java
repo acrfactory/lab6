@@ -61,26 +61,26 @@ public class Utilities {
          * 2. No Scanner operations should appear here (e.g., input.nextInt()).
          *    Instead, refer to the input parameters of this method.
          */
-        int count = 0;
 
-        int[] numOf3 = getMultiplesOf3(numbers);
-        int[][] returnArr = new int[1][1];
-//        returnArr = setUp(numOf3, returnArr);
-        for (int i = 0; i < numOf3.length; i++) {
-            returnArr = new int[numOf3.length][i + 1];
-        }
 
-        for (int i = 0; i < numOf3.length; i++) {
-            for (int j = 0; j <= i; j++) {
-                returnArr[i][j] = numOf3[j];
+
+
+
+        int length = numbers.length;
+        String[] returnArr2 = new String[length];
+
+        for (int i = 0; i < numbers.length; i++) {
+            returnArr2[i] = "[";
+            int j= 0;
+            for (j = 0; j <= i - 1 ; j++) {
+                returnArr2[i] += numbers[j] + ", ";
             }
+            returnArr2[i] += numbers[j] + "]";
         }
-        for (int i = 0; i < returnArr.length; i++) {
-            
-        }
-        return null; // You need to replace this line by returning the proper result.
-    }
 
+            // You need to replace this line by returning the proper result.
+        return returnArr2;
+    }
     /*
      * Input parameters:
      * 	- `numbers` : an array of integers
