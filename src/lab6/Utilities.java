@@ -16,19 +16,32 @@ public class Utilities {
      *
      * Refer to you lab instructions for what the method should return.
      */
+
     public static int[] getMultiplesOf3(int[] numbers) {
 
         /* TODO: Your implementation ends here. */
-
         /* Your implementation of this method starts here.
          * 1. No System.out.println statements should appear here.
          * 	  Instead, you need to return the result.
          * 2. No Scanner operations should appear here (e.g., input.nextInt()).
          *    Instead, refer to the input parameters of this method.
          */
-        return null; // You need to replace this line by returning the proper result.
-    }
 
+        int[] returnArr = new int[0];
+
+        for (int i = 0; i <numbers.length ; i++) {
+            if (numbers[i]%3 == 0) {
+                int a = numbers[i];
+                int[] copyArr = returnArr;
+                returnArr = new int [returnArr.length + 1];
+                for (int j = 0; j < copyArr.length; j++) {
+                  returnArr[j] = copyArr[j];
+                }
+                returnArr[returnArr.length - 1] = a;
+            }
+        }
+        return returnArr; // You need to replace this line by returning the proper result.
+    }
     /*
      * Input parameters:
      * 	- `numbers` : an array of integers
@@ -48,6 +61,23 @@ public class Utilities {
          * 2. No Scanner operations should appear here (e.g., input.nextInt()).
          *    Instead, refer to the input parameters of this method.
          */
+        int count = 0;
+
+        int[] numOf3 = getMultiplesOf3(numbers);
+        int[][] returnArr = new int[1][1];
+//        returnArr = setUp(numOf3, returnArr);
+        for (int i = 0; i < numOf3.length; i++) {
+            returnArr = new int[numOf3.length][i + 1];
+        }
+
+        for (int i = 0; i < numOf3.length; i++) {
+            for (int j = 0; j <= i; j++) {
+                returnArr[i][j] = numOf3[j];
+            }
+        }
+        for (int i = 0; i < returnArr.length; i++) {
+            
+        }
         return null; // You need to replace this line by returning the proper result.
     }
 
