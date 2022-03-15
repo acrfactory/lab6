@@ -97,7 +97,35 @@ public class Utilities {
          * 2. No Scanner operations should appear here (e.g., input.nextInt()).
          *    Instead, refer to the input parameters of this method.
          */
-        return null; // You need to replace this line by returning the proper result.
+        int[] returnArr = new int[numbers.length];
+        int count1 = 0;
+        int count2 = 0;
+        int count3 = 0;
+
+
+         for (int k = 0; k < numbers.length; k++) {
+        if(numbers[k]%3 == 0) {
+            returnArr[count1] = numbers[k];
+            count1++;
+        }
+    }
+        for (int j = 0; j < numbers.length; j++)  {
+
+        if (numbers[j] % 3 == 1) {
+            returnArr[count1 + count2] = numbers[j];
+            count2++;
+        }
+    }
+
+        for (int i = 0; i < numbers.length; i++) {
+
+            if(numbers[i] % 3 == 2) {
+                returnArr[count1 + count2 + count3] = numbers[i];
+                count3++;
+            }
+
+        }
+        return returnArr; // You need to replace this line by returning the proper result.
     }
 
     /*
@@ -118,6 +146,26 @@ public class Utilities {
          * 2. No Scanner operations should appear here (e.g., input.nextInt()).
          *    Instead, refer to the input parameters of this method.
          */
-        return null; // You need to replace this line by returning the proper result.
+
+        int count = 0;
+        for (int i = 0; i < twoDimArray.length; i++) {
+            for (int j = 0; j < twoDimArray[i].length; j++) {
+                count++;
+            }
+        }
+        int [] returnArr = new int[count];
+        int count1 = 0;
+        for (int i = 0; i < twoDimArray.length; i++) {
+            for (int j = 0; j < twoDimArray[i].length; j++) {
+                if ((i + 1)%2 == 0) {
+                    returnArr[count1] = twoDimArray[i][twoDimArray[i].length - j - 1];
+                    count1++;
+                } else {
+                    returnArr[count1] = twoDimArray[i][j];
+                    count1++;
+                }
+            }
+        }
+        return returnArr; // You need to replace this line by returning the proper result.
     }
 }
